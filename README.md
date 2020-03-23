@@ -67,9 +67,10 @@
             -   Scipy
             -   Gensim
             -   Google BERT
-        - Model to find similar concepts and themes
-        - Flask API as an interface between model and webapp
-        - Webapp to enable easy search and exploration of similar concepts across religions
+        
+           - Model to find similar concepts and themes
+           - Flask API as an interface between model and webapp
+           - Webapp to enable easy search and exploration of similar concepts across religions
 
       6. **Final Dashboard for User Group**
         - An interactive app that presents the insights that we have gained.
