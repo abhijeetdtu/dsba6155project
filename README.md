@@ -73,9 +73,9 @@
            - Webapp to enable easy search and exploration of similar concepts across religions
 
       6. **Final Dashboard for User Group**
-        - An interactive app that presents the insights that we have gained.
-        - One of the interactions the user will be able to do with the dashboard is input keywords they want to search for in the texts to get an insight into what opinion each religion holds.
-        - Maybe, a separate web app(Google App Engine)/R-shiny app to enable interactive exploration.
+           - An interactive app that presents the insights that we have gained.
+           - One of the interactions the user will be able to do with the dashboard is input keywords they want to search for in the texts to get an insight into what opinion each religion holds.
+           - Maybe, a separate web app(Google App Engine)/R-shiny app to enable interactive exploration.
 
 * **Research Papers**
   - https://arxiv.org/pdf/1912.10847.pdf
