@@ -47,19 +47,19 @@
     c)  **Tentative Plan for Analysis on GCP**
 
       1. **EDA and Preprocessing**
-        - Use Apache Beam to Scrape Data
-        - Google Storage Bucket for staging data
-        - Data Studio for EDA/Visualization/Reporting
+           - Use Apache Beam to Scrape Data
+           - Google Storage Bucket for staging data
+           - Data Studio for EDA/Visualization/Reporting
 
       2.  **Dashboard for User group, Dashboard for Data Engineers**
-        - Data Studio Dashboard - User Group
-        - Datalab Jupyter Notebook & Data Studio Dashboard - Data Engineers
+           - Data Studio Dashboard - User Group
+           - Datalab Jupyter Notebook & Data Studio Dashboard - Data Engineers
 
       3.  **GCP further processing - ML**
-        - Google AI platform and Google Datalab to create notebooks to perform analytics, data mining, text processing.
+         - Google AI platform and Google Datalab to create notebooks to perform analytics, data mining, text processing.
 
       4. **Evaluation of results**
-        - We might use cluster evaluation methods such as ‘within cluster MSE’ to evaluate the fitness of the clusters of topics/themes.
+         - We might use cluster evaluation methods such as ‘within cluster MSE’ to evaluate the fitness of the clusters of topics/themes.
 
       5.  **Steps for production model**
         - Word to Vector conversions
