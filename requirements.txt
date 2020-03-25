@@ -1,3 +1,7 @@
 bs4
 requests
 ipykernel
+apache-beam
+apache-beam[interactive]
+pandas
+nltk
