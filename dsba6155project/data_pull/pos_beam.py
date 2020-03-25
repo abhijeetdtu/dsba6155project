@@ -12,7 +12,7 @@ files = [ os.path.abspath(os.path.join(Constants.DATA_PATH,f)) for f in os.listd
 options = PipelineOptions()
 pipeline = beam.Pipeline(options=options)
 
-books = pipeline | beam.Create(files[:3])
+books = pipeline | beam.Create(files[:2])
 
 import nltk
 
@@ -21,18 +21,17 @@ def POS(line):
     tags = nltk.pos_tag(text)
     return tags
 
-def CountTags(wordtag):
-    word, tag = wordtag
 
 def count_ones(word_ones):
-      (word, ones) = word_ones
-      return (word, sum(ones))
+    print(word_ones)
+    (word, tag) , ones = word_ones
+    return ((word, tag) , sum(ones))
 
 pos_results = (books
     | "Read Files" >> ReadAllFromText()
     | "POS" >> beam.ParDo(POS)
-    | beam.GroupByKey()
-    | "Count" >> beam.ParDo(count_ones)
+    | "Map" >> beam.ParDo(lambda tag : tag[0] + "-" +tag[1])
+    |  beam.combiners.Count.PerElement()
     | 'write words' >> beam.io.WriteToText("Pos_Counts")
 )
 
