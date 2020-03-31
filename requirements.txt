@@ -5,3 +5,4 @@ apache-beam
 apache-beam[interactive]
 pandas
 nltk
+sklearn

@@ -1,5 +1,5 @@
-%load_ext autoreload
-%autoreload 2
+#%load_ext autoreload
+#%autoreload 2
 
 from dsba6155project.constants import Constants
 
@@ -20,8 +20,7 @@ class GetData:
         if os.path.exists(self.download_location):
             if refresh:
                 shutil.rmtree(self.download_location)
-        else:
-            os.makedirs(self.download_location )
+        os.makedirs(self.download_location )
 
 
     def _safeName(self,name):
@@ -62,5 +61,18 @@ class GetData:
         return book.text
 
 
-queries = ["hinduism" , "religion" , "bible" , "islam" , "buddhism" , "sikh" , "judaism"]
-[GetData(q,refresh=False).GetBooks() for q in queries]
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser("Download Books from Project Gutenberg")
+    parser.add_argument("--query" , help="The search query used")
+    parser.add_argument("--folder-clean" ,default=False, help="Clean the folder before download?")
+
+    args = parser.parse_args()
+    query = args.query
+    refresh = args.folder_clean
+
+    #queries = ["hinduism" , "religion" , "bible" , "islam" , "buddhism" , "sikh" , "judaism"]
+    GetData(query,refresh).GetBooks()

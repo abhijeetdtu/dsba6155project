@@ -17,7 +17,7 @@ books = pipeline | beam.Create(files[:2])
 import nltk
 
 def POS(line):
-    text = nltk.word_tokenize(line)
+    text = nltk.word_tokenize(line.lower())
     tags = nltk.pos_tag(text)
     return tags
 
@@ -31,6 +31,7 @@ pos_results = (books
     | "Read Files" >> ReadAllFromText()
     | "POS" >> beam.ParDo(POS)
     | "Map" >> beam.ParDo(lambda tag : tag[0] + "-" +tag[1])
+    |  beam.GroupByKey()
     |  beam.combiners.Count.PerElement()
     | 'write words' >> beam.io.WriteToText("Pos_Counts")
 )
