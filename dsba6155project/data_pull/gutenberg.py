@@ -17,10 +17,13 @@ class GetData:
         self.query_url = Constants.GUTENBERG_SEARCH_URL.format(query)
         self.download_location = downloadLocation if downloadLocation is not None else Constants.DATA_PATH
         print(self.download_location)
-        if os.path.exists(self.download_location):
-            if refresh:
+
+        if refresh:
+            if os.path.exists(self.download_location):
                 shutil.rmtree(self.download_location)
-        os.makedirs(self.download_location )
+
+        if not os.path.exists(self.download_location):
+            os.makedirs(self.download_location )
 
 
     def _safeName(self,name):
@@ -68,7 +71,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser("Download Books from Project Gutenberg")
     parser.add_argument("--query" , help="The search query used")
-    parser.add_argument("--folder-clean" ,default=False, help="Clean the folder before download?")
+    parser.add_argument("--folder-clean" ,default=False, type=lambda x: (str(x).lower() == 'true'), help="Clean the folder before download?")
 
     args = parser.parse_args()
     query = args.query
