@@ -1,4 +1,6 @@
-./variables.sh
+my_dir="$(dirname "$0")"
+source "$my_dir/variables.sh"
+
 
 if [ ! $(gsutil ls -b $DATA_BUCKET) ]
 then
