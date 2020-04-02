@@ -14,6 +14,10 @@ get_example_app(app,'/app1/').index()
 def index():
     return render_template('index.html')
 
+
+@app.route('/page/<int:number>/')
+def page(number):
+    return render_template(f'page{number}.html' , pagenumber = number)
     #return "app1"
 
 if __name__ == '__main__':

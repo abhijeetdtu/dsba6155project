@@ -1,7 +1,9 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 
+import visdcc
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 def get_example_app(server,path):
@@ -12,14 +14,10 @@ def get_example_app(server,path):
         url_base_pathname =path
     )
 
-    dash_example.layout = html.Div(children=[
-        html.H1(children='Hello Dash'),
-
-        html.Div(children='''
-            Dash: A web application framework for Python.
-        '''),
-
-        dcc.Graph(
+    dash_example.layout = html.Div(
+        className="dash-div",
+        children=[
+            dcc.Graph(
             id='example-graph',
             figure={
                 'data': [
@@ -31,5 +29,8 @@ def get_example_app(server,path):
                 }
             }
         )
+
     ])
+
+
     return dash_example

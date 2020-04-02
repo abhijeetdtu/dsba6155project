@@ -1,3 +1,26 @@
 .embed-dash{
   scroll:none;
 }
+
+body{
+  background-color: #2d3236;
+  color:white;
+}
+
+.kbs-heading{
+  text-align: center;
+}
+.kbs-heading i{
+  color:#5e6565;
+  font-size: 15em;
+}
+
+.kbs-heading .under-text{
+  font-size: 3em;
+}
+
+
+.app-holder {
+  height:100vh;
+  overflow: hidden;
+}
