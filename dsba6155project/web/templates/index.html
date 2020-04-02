@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+  <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+  <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+        <img src="{{ url_for('static' , filename='images/architecture.jpg')}}" height="500"> </img>
+        <div class="card-body">
+          <h5 class="card-title">Architecture</h5>
+          <p class="card-text">Here are the things we want to do</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="dash-embed embed-responsive embed-responsive-16by9">
+            <iframe  src="/app1" scrolling="no"></iframe>
+          </div>
+        </div>
+        <div class="row">
+          <div class="dash-embed embed-responsive embed-responsive-16by9">
+            <iframe  src="https://datastudio.google.com/embed/reporting/6409e28c-59af-42b9-9b24-4180bafc293c/page/GyqEB" scrolling="no"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
