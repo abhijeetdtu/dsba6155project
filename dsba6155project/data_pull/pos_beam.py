@@ -12,13 +12,17 @@ files = [ os.path.abspath(os.path.join(Constants.DATA_PATH,f)) for f in os.listd
 options = PipelineOptions()
 pipeline = beam.Pipeline(options=options)
 
-books = pipeline | beam.Create(files[:2])
+books = pipeline | beam.Create(files[:10])
 
 import nltk
+from nltk.corpus import stopwords
+
+stop_words = set(stopwords.words('english'))
 
 def POS(line):
     text = nltk.word_tokenize(line.lower())
-    tags = nltk.pos_tag(text)
+    filtered_sentence = [w for w in text if not w in stop_words]
+    tags = nltk.pos_tag(filtered_sentence)
     return tags
 
 
@@ -30,9 +34,10 @@ def count_ones(word_ones):
 pos_results = (books
     | "Read Files" >> ReadAllFromText()
     | "POS" >> beam.ParDo(POS)
-    | "Map" >> beam.ParDo(lambda tag : tag[0] + "-" +tag[1])
-    |  beam.GroupByKey()
-    |  beam.combiners.Count.PerElement()
+    #| "Map" >> beam.ParDo(lambda tag : tag[0] + "-" +tag[1])
+    #| "Group" >> beam.GroupByKey()
+    #|  beam.combiners.Count.PerElement()
+    | "Counting ">> beam.ParDo(count_ones)
     | 'write words' >> beam.io.WriteToText("Pos_Counts")
 )
 

@@ -3,9 +3,24 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+import os
+import pandas as pd
+import json
 import visdcc
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
+path = os.path.abspath(os.path.join(os.path.dirname(__file__) , ".." , ".." , "staticdata" , "test.json"))
+data = json.load(open(path , "r"))
+data = data[:100]
+
+x = []
+y= []
+
+for d in data:
+    x.append(d["x"])
+    y.append(d["y"])
+
+print(data)
 def get_example_app(server,path):
     dash_example = dash.Dash(
         __name__,
@@ -20,10 +35,7 @@ def get_example_app(server,path):
             dcc.Graph(
             id='example-graph',
             figure={
-                'data': [
-                    {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                    {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
-                ],
+                'data':[{"x":x , "y":y}],
                 'layout': {
                     'title': 'Dash Data Visualization'
                 }

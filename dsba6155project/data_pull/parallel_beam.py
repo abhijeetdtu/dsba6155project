@@ -12,10 +12,14 @@ files = [ os.path.abspath(os.path.join(Constants.DATA_PATH,f)) for f in os.listd
 options = PipelineOptions()
 pipeline = beam.Pipeline(options=options)
 
-books = pipeline | beam.Create(files[:3])
+books = pipeline | beam.Create(files)
 
 from collections import defaultdict
 
+import nltk
+from nltk.corpus import stopwords
+
+stop_words = set(stopwords.words('english'))
 
 wc = defaultdict(int)
 
@@ -26,7 +30,9 @@ def wordCount(word):
     wc[word] += 1
 
 def splitLines(line):
-    return line.lower().strip("\r\n").split(" ")
+    text = nltk.word_tokenize(line.lower().strip("\r\n"))
+    filtered_sentence = [w for w in text if not w in stop_words]
+    return filtered_sentence
 
 
 (books
@@ -41,6 +47,8 @@ result = pipeline.run()
 result.wait_until_finish()
 
 import pandas as pd
-df = pd.DataFrame({"words" : list(wc.keys()) , "counts" : list(wc.values())})
+df = pd.DataFrame({"word" : list(wc.keys()) , "count" : list(wc.values())})
 
-df.sort_values("counts" , ascending=False).iloc[50:100]
+#df.to_json("./test.json" , orient="records")
+#df.sort_values("y" , ascending=False).iloc[:500].to_json("./test.json" , orient="records")
+df.to_gbq("nlp.wordcounts" , "dsba6155" , if_exists='append')

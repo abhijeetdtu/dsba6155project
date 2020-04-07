@@ -6,3 +6,4 @@ apache-beam[interactive]
 pandas
 nltk
 sklearn
+pandas_gbq
