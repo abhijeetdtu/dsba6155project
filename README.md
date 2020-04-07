@@ -31,7 +31,10 @@
     * World Religion Data:
       - https://data.world/cow/world-religion-data
       - https://data.world/ian/world-religious-populations
-
+   
+    * **Architecture**
+      <img src="./dsba6155project/web/static/images/architecture_svg.svg">
+      
     a) **Preprocessing**
       - Creating Corpus
         - Cleaning
