@@ -91,3 +91,7 @@
 
 * **Research Papers**
   - https://arxiv.org/pdf/1912.10847.pdf
+  - [Designing Cloud Architectures](https://docs.huihoo.com/amazon/aws/whitepapers/AWS-Cloud-Architectures.pdf)
+  - [Text Mining In Cloud](https://link.springer.com/article/10.1007/s10586-017-0909-1)
+  - Helper Blogs
+      - [Cloud NLP](https://medium.com/google-cloud/sentiment-analysis-using-google-cloud-machine-learning-552be9b9c39b)
