@@ -34,7 +34,14 @@
    
     * **Architecture**
       <img src="./dsba6155project/web/static/images/architecture_svg.svg">
-      
+      - Access has been given to Dr Thompson as a reader to the project- dsba6155 in gcp
+      - Cloud Functions - We have the [Python Script](https://github.com/abhijeetdtu/dsba6155project/blob/master/dsba6155project/data_pull/gutenberg.py) ready that pulls books from project gutenberg. It needs to be hooked to cloud functions
+      - Cloud Storage - **kbs_bookstore** - stores the intermediate books downloaded from Project Gutenberg
+      - App Engine - **default**- App Service is hosting the Frontend of the project
+      - **Bigquery** 
+         - This has a dataset - nlp so far with only one table - wordcounts - which was populated using - [Apache Beam](https://github.com/abhijeetdtu/dsba6155project/blob/master/dsba6155project/data_pull/parallel_beam.py)
+         
+         
     a) **Preprocessing**
       - Creating Corpus
         - Cleaning
