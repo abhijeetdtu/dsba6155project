@@ -53,6 +53,8 @@
 
       2.  **Dashboard for User group, Dashboard for Data Engineers**
            - Data Studio Dashboard - User Group
+               - We are planning to build an GCP App Engine web frontend hosted [here](https://dsba6155.appspot.com/)
+               - We are going to use Python Dash and Google Data studio to embed dashboards in the web app to provide seamless storytelling
            - Datalab Jupyter Notebook & Data Studio Dashboard - Data Engineers
 
       3.  **GCP further processing - ML**
