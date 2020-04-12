@@ -1,13 +1,26 @@
-#%load_ext autoreload
-#%autoreload 2
-
-from dsba6155project.constants import Constants
-
 import os
 import re
 import requests
 from bs4 import BeautifulSoup
 import shutil
+
+from multiprocessing.dummy import Pool as ThreadPool
+
+import pathlib
+import os
+
+class Constants:
+    GUTENBERG_URL = "https://www.gutenberg.org"
+    GUTENBERG_SEARCH_URL = f"{GUTENBERG_URL}/ebooks/search/?query={{}}"
+    GUTENBERG_DOWNLOAD_URL = f"{GUTENBERG_URL}/cache/epub/{{ID}}/pg{{ID}}.txt"
+    GUTENBERG_EBOOK_BASE = f"{GUTENBERG_URL}/ebooks/{{ID}}"
+    PROJECT_BASE_PATH = pathlib.Path().resolve()
+    DATA_PATH =  os.path.abspath(os.path.join(PROJECT_BASE_PATH ,"dsba6155project", "data"))
+
+
+    @staticmethod
+    def GUTENBERG_rel_to_abs(rel):
+        return Constants.GUTENBERG_URL + rel
 
 
 class GetData:
@@ -25,6 +38,8 @@ class GetData:
         if not os.path.exists(self.download_location):
             os.makedirs(self.download_location )
 
+        self.pool = ThreadPool(processes=3)
+
 
     def _safeName(self,name):
         return "".join([c for c in name if c.isalpha() or c.isdigit() or c==' ']).rstrip()
@@ -41,11 +56,14 @@ class GetData:
         ids = [ re.findall("\d+" , i)[0] for i in links]
         return ids,titles
 
+    def _getPersistBook(self,id,title):
+        text = self.GetBook(id)
+        self.PersistBook(title , text)
+
     def GetBooks(self):
         ids,titles = self.GetIdsAndTitles()
-        for i,id in enumerate(ids):
-            text = self.GetBook(id)
-            self.PersistBook(titles[i] , text)
+        #
+        self.pool.starmap(self._getPersistBook ,[(id,titles[i]) for i,id in enumerate(ids)] )
 
     def PersistBook(self,title, text):
         name = f"{self.query}_{self._safeName(title)}.txt"

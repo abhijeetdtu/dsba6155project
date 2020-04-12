@@ -3,7 +3,9 @@ requests
 ipykernel
 apache-beam
 apache-beam[interactive]
+apache_beam[gcp]
 pandas
 nltk
 sklearn
 pandas_gbq
+plotnine

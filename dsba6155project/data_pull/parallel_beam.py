@@ -35,6 +35,12 @@ def splitLines(line):
     return filtered_sentence
 
 
+from sklearn.feature_extraction.text import HashingVectorizer
+vectorizer = HashingVectorizer(strip_accents='unicode'
+                            , stop_words="stop_words")
+def hashingVector(doc):
+    reutrn vectorizer.fit_transform(doc)
+
 (books
     | "Read Files" >> ReadAllFromText()
     | "Split Lines" >> beam.ParDo(splitLines)
