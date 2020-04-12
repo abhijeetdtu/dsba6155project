@@ -31,7 +31,17 @@
     * World Religion Data:
       - https://data.world/cow/world-religion-data
       - https://data.world/ian/world-religious-populations
-
+   
+    * **Architecture**
+      <img src="./dsba6155project/web/static/images/architecture_svg.svg">
+      - Access has been given to Dr Thompson as a reader to the project- dsba6155 in gcp
+      - Cloud Functions - We have the [Python Script](https://github.com/abhijeetdtu/dsba6155project/blob/master/dsba6155project/data_pull/gutenberg.py) ready that pulls books from project gutenberg. It needs to be hooked to cloud functions
+      - Cloud Storage - **kbs_bookstore** - stores the intermediate books downloaded from Project Gutenberg
+      - App Engine - **default**- App Service is hosting the Frontend of the project
+      - **Bigquery** 
+         - This has a dataset - nlp so far with only one table - wordcounts - which was populated using - [Apache Beam](https://github.com/abhijeetdtu/dsba6155project/blob/master/dsba6155project/data_pull/parallel_beam.py)
+         
+         
     a) **Preprocessing**
       - Creating Corpus
         - Cleaning
@@ -81,3 +91,9 @@
 
 * **Research Papers**
   - https://arxiv.org/pdf/1912.10847.pdf
+  - [Designing Cloud Architectures](https://docs.huihoo.com/amazon/aws/whitepapers/AWS-Cloud-Architectures.pdf)
+  - [Text Mining In Cloud](https://link.springer.com/article/10.1007/s10586-017-0909-1)
+  - Helper Blogs
+      - [Cloud NLP](https://medium.com/google-cloud/sentiment-analysis-using-google-cloud-machine-learning-552be9b9c39b)
+      
+  - The above research papers along with the cousera course will help us understand what all services can be leveraged in GCP to efficiently develop an end to end system. As we plan to utilize a variety of services from GCP including Cloud functions, Cloud Storage, BigQuery , Data Studio And App Engine, it becomes imperetive to be able to design the system correctly so that all the different pieces can fit together seamlessly. Therefore we would rely on the information in the research papers to be able to design the architecture. Also since the main aim of the project is to do text analytics, we would also want to be aware of best practices and shorthands available to us in cloud environment. There are also many blogs out there which help quickly figure out specific ways to achieve a short goal and therefore move forward. We aim to utilize these resources to come up with a solution that can provide insights into the structures of religious texts.
