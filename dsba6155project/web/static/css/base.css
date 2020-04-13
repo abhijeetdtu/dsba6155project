@@ -24,3 +24,10 @@ body{
   height:100vh;
   overflow: hidden;
 }
+
+.d3-popup{
+  background: #3d3539d4;
+  position: absolute;
+  top:1%;
+  width:25%;
+}

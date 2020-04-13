@@ -3,3 +3,4 @@ dash
 gunicorn
 visdcc
 pandas
+requests
