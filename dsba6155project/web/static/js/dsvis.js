@@ -7,18 +7,17 @@ var d3app = (function() {
         .then(data => {
           callback(data);
         })
-    }
-    ,createPop: function(d){
+    },
+    createPop: function(d) {
       console.log(d)
       d3.select("#popup")
-        .on("mouseover" , function(d){
+        .on("mouseover", function(d) {
           d3.select("#popup")
-            .style("right", function(){
+            .style("right", function() {
               sr = d3.select("#popup").style("right");
-              if(sr == "" || sr == "70%"){
+              if (sr == "" || sr == "70%") {
                 return "5%"
-              }
-              else{
+              } else {
                 return "70%"
               }
             })
@@ -46,8 +45,10 @@ var d3app = (function() {
         .force("link", d3.forceLink().id(function(d) {
           return d.id;
         }))
-        .force("charge" , d3.forceManyBody().strength(-20))
-        .force("forceX", function(d){  d3.forceX().strength(d.year)})
+        .force("charge", d3.forceManyBody().strength(-20))
+        .force("forceX", function(d) {
+          d3.forceX().strength(d.year)
+        })
         .force("center", d3.forceCenter(width / 2, height / 2));
 
 
@@ -74,21 +75,40 @@ var d3app = (function() {
           return d["totalLinks"]
         })
         .attr("fill", function(d, i) {
-          return color(i % 10);
+          return color(d["group"] % 10);
         })
-        .on("mouseover" , d3app.createPop)
+        .on("mouseover", d3app.createPop)
+        .attr("data-legend", function(d) {
+          return d.groupName
+        })
+        .attr("data-legend-color", function(d,i) {
+          return color(d["group"] % 10)
+        })
         .call(d3.drag()
           .on("start", d3app.dragstarted)
           .on("drag", d3app.dragged)
           .on("end", d3app.dragended));
 
+      // var  legend = svg.append("g")
+      //     .attr("class", "legend")
+      //     .attr("transform", "translate(50,30)")
+      //     .style("font-size", "12px")
+      //     .call(d3.legend)
+      //
+      // var legend = svg.append("g")
+      //   .attr("class", "legend")
+      //   .attr("transform", "translate(150,130)")
+      //   .style("font-size", "12px")
+      //   .call(d3.legend)
 
       var lables = node.append("text")
         .text(function(d) {
           return d.id;
         })
         .attr("fill", "white")
-        .attr("font-size", function(d){return d["totalLinks"] + "%"})
+        .attr("font-size", function(d) {
+          return d["totalLinks"] + "%"
+        })
         .attr('x', 6)
         .attr('y', 3);
 
@@ -215,14 +235,14 @@ var d3app = (function() {
         .nodePadding(290)
         .size([width, height]);
 
-        var path = sankey.link();
+      var path = sankey.link();
 
       // load the data
       // Constructs a new Sankey generator with the default settings.
       sankey
         .nodes(graph.nodes)
         .links(graph.links)
-        //.layout(1);
+      //.layout(1);
 
       // add in the links
       var link = svg.append("g")
@@ -231,7 +251,7 @@ var d3app = (function() {
         .enter()
         .append("path")
         .attr("class", "link")
-        .attr("d",path)
+        .attr("d", path)
         .style("stroke-width", function(d) {
           return Math.max(1, d.dy);
         })

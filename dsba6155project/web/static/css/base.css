@@ -31,3 +31,7 @@ body{
   top:1%;
   width:25%;
 }
+
+.d3-legend-box{
+  fill:grey
+}
