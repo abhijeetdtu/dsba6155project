@@ -1,0 +1,4 @@
+spacy
+spacy-lookups-data
+apache-beam
+apache_beam[gcp]

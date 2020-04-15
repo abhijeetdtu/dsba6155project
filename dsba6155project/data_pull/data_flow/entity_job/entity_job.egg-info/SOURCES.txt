@@ -1,0 +1,6 @@
+setup.py
+entity_job.egg-info/PKG-INFO
+entity_job.egg-info/SOURCES.txt
+entity_job.egg-info/dependency_links.txt
+entity_job.egg-info/requires.txt
+entity_job.egg-info/top_level.txt
