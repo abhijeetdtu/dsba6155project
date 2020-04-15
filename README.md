@@ -97,3 +97,31 @@
       - [Cloud NLP](https://medium.com/google-cloud/sentiment-analysis-using-google-cloud-machine-learning-552be9b9c39b)
       
   - The above research papers along with the cousera course will help us understand what all services can be leveraged in GCP to efficiently develop an end to end system. As we plan to utilize a variety of services from GCP including Cloud functions, Cloud Storage, BigQuery , Data Studio And App Engine, it becomes imperetive to be able to design the system correctly so that all the different pieces can fit together seamlessly. Therefore we would rely on the information in the research papers to be able to design the architecture. Also since the main aim of the project is to do text analytics, we would also want to be aware of best practices and shorthands available to us in cloud environment. There are also many blogs out there which help quickly figure out specific ways to achieve a short goal and therefore move forward. We aim to utilize these resources to come up with a solution that can provide insights into the structures of religious texts.
+
+### Work in progress Datastudio Dashboards
+
+- ![image](https://user-images.githubusercontent.com/6872080/79291413-96e7e800-7e9c-11ea-9bdc-8ab1f72bd66f.png)
+- ![image](https://user-images.githubusercontent.com/6872080/79291828-a7e52900-7e9d-11ea-9e76-c4fbd91716a4.png)
+
+
+* **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
+
+   - Most  of  the  gains  come  from great features and not great machine learning algorithms.As the article begins by saying that we should have a reasonable objective and that the end to end pipeline should be solid, for us the implications are from the creation of the infrastructure resources to loading, processing and then using data, all the steps should be automated as much so that they are repeatable. For this, we have leveraged - **Terraform and Google technologies like Apache beam** that seamlessly integrate with GCP.
+
+   **Rule#1**- Don’t be afraid to launch a product without machine learning.
+      - Rule 1 is of particular interest as it boldly states that we should not hesitate in launching a product without ML. What this means for our project is that we will focus on iteratively improving on simpler versions of our end goal. Adding layers as we go.
+
+   **Rule #4**: Keep the first model simple and get the infrastructure right.
+      - As the rule says, we will first focus on implementing a solid pipeline and begin by implementing a simple baseline model and then focus on enhancing our model to boost performance.
+
+   **Rule#5**: Testing Infrastructure independently from machine learning
+      - Since we are leveraging apache beam and terraform it becomes easier to test the infrastructure components without having to test the machine learning pieces. We can use the terraform plan phase to see if it is going to create the resources we need. Similarly, we can test our apache beam pipeline with just a few files to see that the data is correctly processed and transformed.
+
+   **Rule# 16**:  Plan to launch and iterate.
+      - For our text mining approach, we need to first choose the textual features and then decide on how to quantify the similarity of the documents/books. After having converted each document into a vector, we will evaluate how good those document vectors are. There are many ways to convert documents to vectors and even more ways to quantify similarity, therefore instead of trying all possible ways we pick one based on our initial research and similar past projects. Following through and looking at final results, if we don’t get satisfactory results we will reiterate and try a different approach.
+
+   **Rule#36** - Avoid feedback loops with positional features
+      - For our text mining project, this rule implies that we should have features that are not as crude as a simple bag of words. We might want to add more informative features by using algorithms for Part of Speech tagging and Entity extraction that will not just give what words were present in a book, but also provide syntactic and semantic information.
+
+   **Rule#41** - When performance plateaus, look for qualitatively new sources of information to add rather than refining existing signals.
+      - This is a very common problem, and although we haven’t got there yet for this project, the advice offered in the article is sound. We should be adding more/better features to the data than trying to transform or enhance the existing features. This rule will come handy when we would be evaluating the document/book similarities.
