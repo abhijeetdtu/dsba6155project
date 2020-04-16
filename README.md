@@ -105,7 +105,7 @@
     - <img src="https://user-images.githubusercontent.com/6872080/79402436-cd376d00-7f59-11ea-9750-f715d9c8560f.png" height="300"/>
     
 * Using Apache Beam with Cloud Dataflow to process the text files
-   - <img src="https://user-images.githubusercontent.com/6872080/79402263-58fcc980-7f59-11ea-8061-372a567e7ecc.png" height="300"/>
+   - <img src="https://user-images.githubusercontent.com/6872080/79412237-f7495900-7f72-11ea-99cd-a77f3e27a12e.png" height="300"/>
 
 ### Work in progress Datastudio Dashboards
 
