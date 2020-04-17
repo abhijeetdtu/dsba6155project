@@ -4,3 +4,5 @@ entity_job.egg-info/SOURCES.txt
 entity_job.egg-info/dependency_links.txt
 entity_job.egg-info/requires.txt
 entity_job.egg-info/top_level.txt
+job/__init__.py
+job/entity_tag_beam.py

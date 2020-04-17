@@ -6,4 +6,5 @@ beam-temp*
 *terraform_sp*
 cloud_function/download*
 \.terraform*
-output*
+output-*
+outputf-*

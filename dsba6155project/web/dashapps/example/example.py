@@ -10,21 +10,7 @@ import pathlib
 import visdcc
 import plotly.express as px
 
-projectId = "dsba6155p"
-datasetTable = "nlpdataset.document_entities"
-__file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\dashapps\\example\\example.py"
-path = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute() , "staticdata")
-dfp = os.path.join(path, "outputs_document_entities_export.csv")
 
-lbp = os.path.join(path, "label_descriptions.csv")
-
-#df = pd.read_gbq(query=f"SELECT * from {projectId}.{datasetTable}",project_id=projectId)
-df = pd.read_csv(dfp)
-ldesc = pd.read_csv(lbp)
-ldesc.index = ldesc["label"]
-
-ldesc = ldesc.drop(["label"] , axis=1)
-df = pd.merge(df , ldesc , on="label")
 
 def getBubbleData(df, labelFilter,filterValue=50):
     #__file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\d3.py"
@@ -35,6 +21,22 @@ def getBubbleData(df, labelFilter,filterValue=50):
     return ndf
 
 def get_app(server,path):
+    projectId = "dsba6155p"
+    datasetTable = "nlpdataset.document_entities"
+    __file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\dashapps\\example\\example.py"
+    fpath = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute() , "staticdata")
+    dfp = os.path.join(fpath, "outputs_document_entities_export.csv")
+
+    lbp = os.path.join(fpath, "label_descriptions.csv")
+
+    #df = pd.read_gbq(query=f"SELECT * from {projectId}.{datasetTable}",project_id=projectId)
+    df = pd.read_csv(dfp)
+    ldesc = pd.read_csv(lbp)
+    ldesc.index = ldesc["label"]
+
+    ldesc = ldesc.drop(["label"] , axis=1)
+    df = pd.merge(df , ldesc , on="label")
+
     dash_example = dash.Dash(
         __name__,
         server=server,
