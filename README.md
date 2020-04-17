@@ -98,11 +98,21 @@
       
   - The above research papers along with the cousera course will help us understand what all services can be leveraged in GCP to efficiently develop an end to end system. As we plan to utilize a variety of services from GCP including Cloud functions, Cloud Storage, BigQuery , Data Studio And App Engine, it becomes imperetive to be able to design the system correctly so that all the different pieces can fit together seamlessly. Therefore we would rely on the information in the research papers to be able to design the architecture. Also since the main aim of the project is to do text analytics, we would also want to be aware of best practices and shorthands available to us in cloud environment. There are also many blogs out there which help quickly figure out specific ways to achieve a short goal and therefore move forward. We aim to utilize these resources to come up with a solution that can provide insights into the structures of religious texts.
 
+
+### Getting the data
+
+* Getting the text files with a cloud function
+    - <img src="https://user-images.githubusercontent.com/6872080/79402436-cd376d00-7f59-11ea-9750-f715d9c8560f.png" height="300"/>
+    
+* Using Apache Beam with Cloud Dataflow to process the text files
+   - <img src="https://user-images.githubusercontent.com/6872080/79412237-f7495900-7f72-11ea-99cd-a77f3e27a12e.png" height="300"/>
+
 ### Work in progress Datastudio Dashboards
 
 - ![image](https://user-images.githubusercontent.com/6872080/79291413-96e7e800-7e9c-11ea-9bdc-8ab1f72bd66f.png)
 - ![image](https://user-images.githubusercontent.com/6872080/79291828-a7e52900-7e9d-11ea-9e76-c4fbd91716a4.png)
 
+- We also have some tableau exploration results [Here](https://github.com/abhijeetdtu/dsba6155project/blob/master/TableauResults.md)
 
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
