@@ -1,7 +1,13 @@
-<div class="row">
-  <div class="shadow-sm p-3 mb-5 bg-white rounded dash-embed embed-responsive embed-responsive-16by9">
-      <iframe src="https://datastudio.google.com/embed/reporting/8889d502-0ddc-4573-98d3-7ecf295067e9/page/3NQLB" scrolling="no"></iframe>
+{% extends 'base_template.html' %}
 
-  </div>
+{% block content %}
+<div class="container">
+      <div class="row">
+          <div class="shadow-sm p-3 mb-5 bg-white rounded dash-embed embed-responsive embed-responsive-16by9">
+            <iframe src="/app1" scrolling="no" width=700 height=600></iframe>
 
+
+          </div>
+      </div>
 </div>
+{% endblock %}

@@ -1,5 +1,8 @@
 import requests
 import json
+import pandas as pd
+import pathlib
+import os
 
 class D3:
 
@@ -62,3 +65,16 @@ class D3:
                 j["totalLinks"] = totalLinks
                 nodes.append(j)
         return {"nodes" : nodes , "links":links}
+
+
+class D3BookData:
+
+    def getData(self , labelFilter):
+        labelFilter = "PERSON"
+        #__file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\d3.py"
+        path = os.path.join(pathlib.Path(__file__).parent.absolute() , "staticdata" , "outputs_document_entities_export.csv")
+        df = pd.read_csv(path)
+        df = df[df["label"] == labelFilter]
+        df = df[df["count"] > 50]
+        df["category"] = df["file"].apply(lambda x: x.split("/")[-1].split("_")[0])
+        return json.loads(df[["text" , "count" , "category"]].to_json(orient="records"))

@@ -27,6 +27,7 @@
 
   <script src="{{ url_for('static' , filename='js/d3legend.js') }}"> </script>
   <script src="{{ url_for('static' , filename='js/dsvis.js') }}"> </script>
+  <script src="{{ url_for('static' , filename='js/d3BubbleForce.js') }}"> </script>
 </head>
 
 <body style="overflow:hidden">
@@ -35,7 +36,8 @@
   <div id="popup" class="d3-popup">
   </div>
   <script>
-    d3app.network()
+    // d3app.network()
+    {{ instantiate }}
   </script>
 </body>
 

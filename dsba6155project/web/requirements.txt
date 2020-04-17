@@ -4,3 +4,4 @@ gunicorn
 visdcc
 pandas
 requests
+pandas-gbq

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+  <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type='text/css'>
+
+  <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static' , filename='css/base.css')}}">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
+
+  <!-- Required scripts -->
+  <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+
+
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>
