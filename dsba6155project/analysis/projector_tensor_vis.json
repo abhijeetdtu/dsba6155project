@@ -3,8 +3,7 @@
     {
       "tensorName": "My tensor",
       "tensorShape": [
-        1000,
-        50
+        202240, 64
       ],
       "tensorPath":"https://storage.googleapis.com/dsba6155pdatabucket/vectors/vector%20(1).tsv",
       "metadataPath": https://storage.googleapis.com/dsba6155pdatabucket/vectors/meta%20(1).tsv
