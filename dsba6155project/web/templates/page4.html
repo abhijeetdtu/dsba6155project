@@ -1,0 +1,25 @@
+
+
+
+<div class="show-md">
+</div>
+
+
+  <script>
+  var githubmd = (function(){
+      converter = new showdown.Converter(),
+      TABLEAU_URL = "https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/TableauResults.md"
+      return {
+        getMD : function(){
+          $.get(TABLEAU_URL).then(function(data){
+            githubmd.toHTML(data)
+          })
+        },
+        toHTML : function(text){
+          html = converter.makeHtml(text);
+          $(".show-md").html(html)
+        }
+      }
+  })()
+  githubmd.getMD()
+  </script>

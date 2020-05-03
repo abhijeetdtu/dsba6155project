@@ -4,7 +4,7 @@
 <head>
   <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
   <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
-
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type='text/css'>
 
   <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -15,10 +15,15 @@
   <!-- Required scripts -->
   <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
   <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+  {% block scripts %}{% endblock %}
 
 </head>
 <body>
-  {% block content %}{% endblock %}
+  <div class="block-content" style="height:100%;width:100%;">
+
+    {% block content %}{% endblock %}
+  </div>
+
 </body>
 </html>

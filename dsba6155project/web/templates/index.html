@@ -1,58 +1,41 @@
-<!doctype html>
-<html>
+{% extends 'base_template.html' %}
 
-<head>
-  <!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
-  <!-- <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+{% block content %}
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" type='text/css'>
-
-  <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static' , filename='css/base.css')}}">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
-
-  <!-- Required scripts -->
-  <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
-  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-
-
-</head>
-
-<body>
-  <div id="app" class="app-holder container">
-    <div class="row">
-      <div class="offset-md-10 col">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-secondary" v-on:click="previousPage()" v-if='currentPage > 0'>Previous</button>
-          <button type="button" class="btn btn-secondary" v-on:click="nextPage()">Next</button>
-        </div>
+<div id="app" class="app-holder container">
+  <div class="row">
+    <div class="offset-md-10 col">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" v-on:click="previousPage()" v-if='currentPage > 0'>Previous</button>
+        <button type="button" class="btn btn-secondary" v-on:click="nextPage()">Next</button>
       </div>
-      <hr>
     </div>
+    <hr>
+  </div>
 
-    <div class="row h-75" style="position:relative;">
-      <div class="col-md-12 h-100 d-inline-block"  v-if="currentPage == 0">
-          <span class="kbs-heading  h-100 d-inline-block d-flex align-items-center justify-content-center" onclick="window.location = '/'">
+  <div class="row h-75" style="position:relative;">
+    <div class="col-md-12 h-100 d-inline-block" v-if="currentPage == 0">
+      <span class="kbs-heading  h-100 d-inline-block d-flex align-items-center justify-content-center" onclick="window.location = '/'">
 
-            <span href="#" data-toggle="collapse" data-target="#one">
-                <i class="fas fa-chart-line"></i><br><p class='under-text'>Analytics.</p>
-            </span>
-            <span href="#" data-toggle="collapse" data-target="#one">
-                <i class="fas fa-place-of-worship"></i><br><p class='under-text'>Religions.</p>
-            </span>
-            <span href="#" data-toggle="collapse" data-target="#one">
-              <i class="fas fa-book-open"></i><br><p class='under-text'>Books.</p>
-            </span>
-            <!--  -->
-          </span>
-      </div>
-      <div class="col" id="viewbox">
+        <span href="#" data-toggle="collapse" data-target="#one">
+          <i class="fas fa-chart-line"></i><br>
+          <p class='under-text'>Analytics.</p>
+        </span>
+        <span href="#" data-toggle="collapse" data-target="#one">
+          <i class="fas fa-place-of-worship"></i><br>
+          <p class='under-text'>Religions.</p>
+        </span>
+        <span href="#" data-toggle="collapse" data-target="#one">
+          <i class="fas fa-book-open"></i><br>
+          <p class='under-text'>Books.</p>
+        </span>
+        <!--  -->
+      </span>
+    </div>
+    <div class="col" id="viewbox">
 
-      </div>
     </div>
   </div>
-  <script src="{{ url_for('static' , filename='js/app.js')}}"></script>
-</body>
-
-</html>
+</div>
+<script src="{{ url_for('static' , filename='js/app.js')}}"></script>
+{% endblock %}

@@ -1,7 +1,7 @@
 flask
+Flask-Caching
 dash
 gunicorn
-visdcc
 pandas
 requests
 pandas-gbq

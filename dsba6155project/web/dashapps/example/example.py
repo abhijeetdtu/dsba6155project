@@ -1,66 +1,52 @@
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash
+from dash_core_components import Slider, Dropdown, Graph
+from dash_html_components import Div
 from dash.dependencies import Input, Output
 
-import os
-import pandas as pd
-import json
-import pathlib
-import visdcc
+from json import loads
+
 import plotly.express as px
 
+from dashapps.example.data_loader import Model
 
 
-def getBubbleData(df, labelFilter,filterValue=50):
+def getBubbleData(df, labelFilter, filterValue=50):
     #__file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\d3.py"
     ndf = df[df["label"] == labelFilter]
     ndf = ndf[ndf["count"] > filterValue]
-    ndf["category"] = ndf["file"].apply(lambda x: x.split("/")[-1].split("_")[0])
+
     #return ndf[[ "text" , "count" , "category"]]
     return ndf
 
 def get_app(server,path):
-    projectId = "dsba6155p"
-    datasetTable = "nlpdataset.document_entities"
-    __file__ = "C:\\Users\\Abhijeet\\Documents\\GitHub\\dsba6155project\\dsba6155project\\web\\dashapps\\example\\example.py"
-    fpath = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute() , "staticdata")
-    dfp = os.path.join(fpath, "outputs_document_entities_export.csv")
 
-    lbp = os.path.join(fpath, "label_descriptions.csv")
+    df = Model().df
+    ldesc = Model().ldesc
 
-    #df = pd.read_gbq(query=f"SELECT * from {projectId}.{datasetTable}",project_id=projectId)
-    df = pd.read_csv(dfp)
-    ldesc = pd.read_csv(lbp)
-    ldesc.index = ldesc["label"]
-
-    ldesc = ldesc.drop(["label"] , axis=1)
-    df = pd.merge(df , ldesc , on="label")
-
-    dash_example = dash.Dash(
+    dash_example = Dash(
         __name__,
         server=server,
         url_base_pathname =path
     )
 
-    label_map = json.loads(ldesc.to_json(orient="index"))
+    label_map = loads(ldesc.to_json(orient="index"))
 
-    dash_example.layout = html.Div(
+    dash_example.layout = Div(
         className="dash-div",
         children=[
-            dcc.Dropdown(
+            Dropdown(
                 id='label-dropdown',
                 options=[{'label': label_map[i]["label_description"], 'value':i } for i in df['label'].unique()],
                 value=df['label'].unique()[0]
             ),
-            dcc.Slider(
+            Slider(
                 id='filter-slider',
                 min=0,
                 max=20,
                 step=1,
                 value=10
             ),
-            dcc.Graph(id="bubble-chart")
+            Graph(id="bubble-chart")
             ]
         )
 
@@ -69,6 +55,7 @@ def get_app(server,path):
         Output('bubble-chart', 'figure'),
         [Input('label-dropdown', 'value'),Input('filter-slider', 'value')])
     def update_figure(label,value):
+        df = Model().df
         ndf = getBubbleData(df,label,value)
         #print(ndf.head())
         bar = px.bar(ndf, y="text", x="count", color="category", orientation='h',barmode='group')
@@ -91,6 +78,7 @@ def get_app(server,path):
         Output('filter-slider', 'value'),
         [Input('label-dropdown', 'value')])
     def update_slider_min(label):
+        df = Model().df
         ndf = getBubbleData(df,label)
         #print(ndf.head())
         return ndf["count"].min()
@@ -99,6 +87,7 @@ def get_app(server,path):
         Output('filter-slider', 'min'),
         [Input('label-dropdown', 'value')])
     def update_slider_min(label):
+        df = Model().df
         ndf = getBubbleData(df,label)
         #print(ndf.head())
         return ndf["count"].min()
@@ -107,6 +96,7 @@ def get_app(server,path):
         Output('filter-slider', 'max'),
         [Input('label-dropdown', 'value')])
     def update_slider_max(label):
+        df = Model().df
         ndf = getBubbleData(df,label)
         #print(ndf.head())
         return ndf["count"].max()

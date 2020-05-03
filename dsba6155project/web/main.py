@@ -1,15 +1,9 @@
-import flask
 from flask import jsonify
-import dash
-import requests
-import json
-from d3 import D3 , D3BookData
-import dash_html_components as html
 from dashapps.example.example import get_app
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from d3 import D3, D3BookData
 from flask import Flask, render_template
 
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 
 get_app(app,'/app1/').index()
@@ -45,4 +39,6 @@ def d3(dashId):
     #return "app1"
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8050)
+    import os
+
+    app.run(debug=True, port=os.environ.get("PORT" , 8000))
