@@ -20,3 +20,5 @@ folium
 geocoder
 plotly
 nbformat
+keras
+tensorflow
