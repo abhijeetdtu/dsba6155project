@@ -107,13 +107,18 @@
 * Using Apache Beam with Cloud Dataflow to process the text files
    - <img src="https://user-images.githubusercontent.com/6872080/79412237-f7495900-7f72-11ea-99cd-a77f3e27a12e.png" height="300"/>
 
-### Work in progress Datastudio Dashboards
-
+### EDA Dashboards for books
+- [Link to Dashboard](https://datastudio.google.com/reporting/d07c9d8e-2d34-4117-ac78-383505cf1eab)
 - ![image](https://user-images.githubusercontent.com/6872080/79291413-96e7e800-7e9c-11ea-9bdc-8ab1f72bd66f.png)
 - ![image](https://user-images.githubusercontent.com/6872080/79291828-a7e52900-7e9d-11ea-9e76-c4fbd91716a4.png)
 
 - We also have some tableau exploration results [Here](https://github.com/abhijeetdtu/dsba6155project/blob/master/TableauResults.md)
 
+### Sentiment Analysis
+  - ![image](https://user-images.githubusercontent.com/6872080/81126197-96c19200-8f08-11ea-9b3a-b44b81f73987.png)
+  - ![image](https://user-images.githubusercontent.com/6872080/81126237-b5c02400-8f08-11ea-9515-50b9d8c84c9d.png)
+  - [Link to Dashboard](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
+  
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
    - Most  of  the  gains  come  from great features and not great machine learning algorithms.As the article begins by saying that we should have a reasonable objective and that the end to end pipeline should be solid, for us the implications are from the creation of the infrastructure resources to loading, processing and then using data, all the steps should be automated as much so that they are repeatable. For this, we have leveraged - **Terraform and Google technologies like Apache beam** that seamlessly integrate with GCP.
