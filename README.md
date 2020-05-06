@@ -118,17 +118,19 @@
    - ![image](https://user-images.githubusercontent.com/6872080/81128454-48fc5800-8f0f-11ea-864b-49261beb2e60.png)
    
 ### Sentiment Analysis
+  - [Link to Dashboard](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
   - ![image](https://user-images.githubusercontent.com/6872080/81126197-96c19200-8f08-11ea-9b3a-b44b81f73987.png)
   - ![image](https://user-images.githubusercontent.com/6872080/81126237-b5c02400-8f08-11ea-9515-50b9d8c84c9d.png)
-  - [Link to Dashboard](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
+  
   
 
 ### Modelling Results
+   - [Link to Interactive Playground](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
+         * P.S - Please give it a minute to load
    - We created a model that learns word embedding using Keras and Tensorflow
    - Example result
       - ![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
-   - [Link to Interactive Playground](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
-      * P.S - Please give it a minute to load
+   
       
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
