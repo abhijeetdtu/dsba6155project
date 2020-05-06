@@ -153,7 +153,7 @@ Example result
       - In the image above where each dot is a different version of Bible, we could see that the differences in the versions over time are explained by PC0, but problem with principal component analysis is that it's difficult to pin point what exactly PC0 composed of
    - Leverage text analytics/ word vectors to search for similar ideas in different books, compare and contrast them
       - We leveraged sentiment analysis to compare different books
-         - <img src="https://user-images.githubusercontent.com/6872080/81130907-5b7a8f80-8f17-11ea-8333-f219a084b645.png" height="300"/>
+         - <img src="./dsba6155project/web/static/images/cumulative.png" height="450"/>
 
 <br>
 
