@@ -131,6 +131,20 @@
    - Example result
       - ![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
    
+
+### Conclusions
+   - Distinctions between Pre-abrahamic vs Abrahamic religions
+      - We could see that on using TF-IDF on wikipedia articles and running PCA, books of two categories clustered in distinct regions
+   - Geography/Demographics by religion
+      - From the geo maps we could see that Ancient regions/countries like India, Jerusalem, Egypt showed up across different religions
+   - Evolution of themes in the texts over time/ change of tone / language / concepts
+      - <img src="https://user-images.githubusercontent.com/6872080/81130237-0b023280-8f15-11ea-9b70-399cad6def38.png" height="300"/>
+      - In the image above where each dot is a different version of Bible, we could see that the differences in the versions over time are explained by PC0, but problem with principal component analysis is that it's difficult to pin point what exactly PC0 composed of
+   - Leverage text analytics/ word vectors to search for similar ideas in different books, compare and contrast them
+      - We leveraged sentiment analysis to compare different books
+         - <img src="https://user-images.githubusercontent.com/6872080/81130907-5b7a8f80-8f17-11ea-8333-f219a084b645.png" height="300"/>
+
+
       
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
