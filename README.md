@@ -135,9 +135,10 @@ Pre Abrahamic Books Vs Abrahamic Books
 <br>
 
 ### Modelling Results
-[Interactive Playground Link](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
-* P.S - Please give it a minute to load
+[Interactive Playground Link](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json) P.S - Please give it a minute to load
+
 We created a model that learns word embedding using Keras and Tensorflow
+
 Example result
 ![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
    
