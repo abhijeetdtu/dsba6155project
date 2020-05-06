@@ -119,6 +119,14 @@
   - ![image](https://user-images.githubusercontent.com/6872080/81126237-b5c02400-8f08-11ea-9515-50b9d8c84c9d.png)
   - [Link to Dashboard](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
   
+
+### Modelling Results
+   - We created a model that learns word embedding using Keras and Tensorflow
+   - Example result
+      - ![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
+   - [Link to Interactive Playground](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
+      * P.S - Please give it a minute to load
+      
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
    - Most  of  the  gains  come  from great features and not great machine learning algorithms.As the article begins by saying that we should have a reasonable objective and that the end to end pipeline should be solid, for us the implications are from the creation of the infrastructure resources to loading, processing and then using data, all the steps should be automated as much so that they are repeatable. For this, we have leveraged - **Terraform and Google technologies like Apache beam** that seamlessly integrate with GCP.
