@@ -144,21 +144,6 @@
       - We leveraged sentiment analysis to compare different books
          - <img src="https://user-images.githubusercontent.com/6872080/81130907-5b7a8f80-8f17-11ea-8333-f219a084b645.png" height="300"/>
 
-
-### Team Member Contributions
-
-   - Abhijeet
-      - Terraform pipeline and creating infrastructure
-      - Apache beam pipline for processing books and loading bigquery dataset
-      - Project Gutenberg Interface to download books
-      - Word Embedding Model
-   - Kevin and Janani
-      - Github Documentation
-      - Sentiment Analysis of different texts
-   - Mansi and Riddhi
-      - Exploratory Data Analysis using Cloud Datastudio
-      - Evaluating Machine Learning Rules for our project
-      
       
 * **Evaluating   Machine  Learning  Projects:  Forty  Three  Rules  of  Machine  Learning**
 
@@ -181,3 +166,20 @@
 
    **Rule#41** - When performance plateaus, look for qualitatively new sources of information to add rather than refining existing signals.
       - This is a very common problem, and although we haven’t got there yet for this project, the advice offered in the article is sound. We should be adding more/better features to the data than trying to transform or enhance the existing features. This rule will come handy when we would be evaluating the document or book similarities.
+
+
+
+### Team Member Contributions
+
+   - Abhijeet
+      - Terraform pipeline and creating infrastructure
+      - Apache beam pipline for processing books and loading bigquery dataset
+      - Project Gutenberg Interface to download books
+      - Word Embedding Model
+   - Kevin and Janani
+      - Github Documentation
+      - Sentiment Analysis of different texts
+   - Mansi and Riddhi
+      - Exploratory Data Analysis using Cloud Datastudio
+      - Evaluating Machine Learning Rules for our project
+      
