@@ -9,6 +9,8 @@
 
 [Presentation Video Link](https://drive.google.com/file/d/137swqNrVcIxY1egzhj3b9Jghp3Sa9aFl/view?usp=sharing)
 
+<br>
+
 1. **Research question**:  
    - Distinctions between Pre-abrahamic vs Abrahamic religions
    - Geography/Demographics by religion
@@ -114,30 +116,30 @@
 <br>
 
 ### EDA Dashboards for books
-- [Link to Dashboard](https://datastudio.google.com/reporting/d07c9d8e-2d34-4117-ac78-383505cf1eab)
-- ![image](https://user-images.githubusercontent.com/6872080/79291413-96e7e800-7e9c-11ea-9bdc-8ab1f72bd66f.png)
-- ![image](https://user-images.githubusercontent.com/6872080/79291828-a7e52900-7e9d-11ea-9e76-c4fbd91716a4.png)
+[Dashboard Link](https://datastudio.google.com/reporting/d07c9d8e-2d34-4117-ac78-383505cf1eab)
+![image](https://user-images.githubusercontent.com/6872080/79291413-96e7e800-7e9c-11ea-9bdc-8ab1f72bd66f.png)
+![image](https://user-images.githubusercontent.com/6872080/79291828-a7e52900-7e9d-11ea-9e76-c4fbd91716a4.png)
 
-- We also have some tableau exploration results [Here](https://github.com/abhijeetdtu/dsba6155project/blob/master/TableauResults.md)
-- Pre Abrahamic Books Vs Abrahamic Books
-   - [Link to Jupyter Notebook](https://colab.research.google.com/drive/1vv3QoIDkaJmnt2opQ9auclM2BBny-nUG)
-   - ![image](https://user-images.githubusercontent.com/6872080/81128454-48fc5800-8f0f-11ea-864b-49261beb2e60.png)
+We also have some tableau exploration results [here](https://github.com/abhijeetdtu/dsba6155project/blob/master/TableauResults.md).
+Pre Abrahamic Books Vs Abrahamic Books
+[Jupyter Notebook Link](https://colab.research.google.com/drive/1vv3QoIDkaJmnt2opQ9auclM2BBny-nUG)
+![image](https://user-images.githubusercontent.com/6872080/81128454-48fc5800-8f0f-11ea-864b-49261beb2e60.png)
 
 <br>
 
 ### Sentiment Analysis
-  - [Link to Dashboard](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
-  - ![image](https://user-images.githubusercontent.com/6872080/81126197-96c19200-8f08-11ea-9b3a-b44b81f73987.png)
-  - ![image](https://user-images.githubusercontent.com/6872080/81126237-b5c02400-8f08-11ea-9515-50b9d8c84c9d.png)
+[Dashboard Link](https://datastudio.google.com/reporting/c8f90611-a6f6-4c0d-8440-2bedf7efd2ac)
+![image](https://user-images.githubusercontent.com/6872080/81126197-96c19200-8f08-11ea-9b3a-b44b81f73987.png)
+![image](https://user-images.githubusercontent.com/6872080/81126237-b5c02400-8f08-11ea-9515-50b9d8c84c9d.png)
   
 <br>
 
 ### Modelling Results
-   - [Link to Interactive Playground](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
-         * P.S - Please give it a minute to load
-   - We created a model that learns word embedding using Keras and Tensorflow
-   - Example result
-      - ![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
+[Interactive Playground Link](http://projector.tensorflow.org/?config=https://raw.githubusercontent.com/abhijeetdtu/dsba6155project/master/dsba6155project/analysis/projector_tensor_vis.json)
+* P.S - Please give it a minute to load
+We created a model that learns word embedding using Keras and Tensorflow
+Example result
+![image](https://user-images.githubusercontent.com/6872080/81127461-4b10e780-8f0c-11ea-83de-95515a317ecb.png)
    
 <br>
 
